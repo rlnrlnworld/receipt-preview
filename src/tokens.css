@@ -1,0 +1,91 @@
+/* Hallmark · pre-emit critique: P4 H5 E4 S5 R5 V4 */
+/* Hallmark · genre: modern-minimal · macrostructure: Component Playground · theme: Cobalt · enrichment: none · nav: N9 · footer: none
+ * tone: technical · anchor hue: electric cobalt (256) · paper: cool light · display: grotesk-sans
+ * brief: ESC/POS receipt preview — internal dev tool (Vite + Vanilla TS)
+ */
+
+:root {
+  /* Paper & ink — cool engineered, never #fff / #000 */
+  --color-paper: oklch(98.5% 0.004 250);
+  --color-paper-2: oklch(96.5% 0.006 250);
+  --color-paper-3: oklch(94% 0.008 250);
+  --color-ink: oklch(24% 0.02 258);
+  --color-ink-2: oklch(34% 0.018 257);
+  --color-ink-3: oklch(52% 0.016 257);
+  --color-ink-4: oklch(66% 0.012 257);
+  --color-rule: oklch(89% 0.008 252);
+  --color-rule-2: oklch(82% 0.01 252);
+
+  /* The one signal */
+  --color-accent: oklch(58% 0.2 256);
+  --color-accent-hover: oklch(52% 0.2 256);
+  --color-accent-soft: oklch(94% 0.03 256);
+  --color-accent-ink: oklch(99% 0.004 250);
+  --color-focus: oklch(58% 0.2 256);
+
+  /* Graphite band — the page's one dark beat */
+  --color-graphite: oklch(22% 0.016 260);
+  --color-graphite-2: oklch(27% 0.016 260);
+  --color-graphite-rule: oklch(34% 0.016 260);
+  --color-graphite-ink: oklch(92% 0.006 250);
+  --color-graphite-ink-2: oklch(70% 0.01 252);
+  --color-backdrop: oklch(22% 0.016 260 / 0.55);
+  --color-toast: oklch(99% 0.003 250 / 0.72);
+  --color-toast-rule: oklch(100% 0 0 / 0.6);
+
+  /* Thermal paper — the receipt itself */
+  --color-thermal: oklch(99.2% 0.003 90);
+  --color-thermal-ink: oklch(18% 0.01 260);
+  --color-thermal-shadow: oklch(10% 0.01 260 / 0.45);
+
+  /* Status */
+  --color-warn: oklch(72% 0.15 70);
+  --color-warn-soft: oklch(95% 0.04 80);
+  --color-warn-ink: oklch(40% 0.12 60);
+  --color-ok: oklch(62% 0.15 150);
+  --color-danger: oklch(58% 0.21 27);
+  --color-danger-hover: oklch(50% 0.21 27);
+  --color-danger-soft: oklch(95% 0.03 27);
+  --color-danger-ink: oklch(99% 0.004 250);
+
+  /* Type */
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+  --font-thermal: "Nanum Gothic Coding", "D2Coding", "JetBrains Mono", monospace;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+
+  /* Space — 4pt */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Radius — drawn with a ruler */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Rules */
+  --rule-1: 1px solid var(--color-rule);
+  --rule-2: 1px solid var(--color-rule-2);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 400ms;
+}
