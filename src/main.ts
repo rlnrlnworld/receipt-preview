@@ -74,23 +74,27 @@ type State = {
   tab: "preview" | "raw" | "issues"
 }
 
+const STARTER_BLOCKS: Block[] = [
+  { kind: "text", text: "내용을 입력하세요", align: "center", bold: false, double: false, underline: false, reverse: false },
+]
+
 const DEFAULT: State = {
   mode: "build",
-  source: serialize(DEMO_RECEIPT_BLOCKS, 32),
-  blocks: structuredClone(DEMO_RECEIPT_BLOCKS),
+  source: serialize(STARTER_BLOCKS, 32),
+  blocks: structuredClone(STARTER_BLOCKS),
   format: "escaped",
   encoding: "utf-8",
   cols: 32,
   tab: "preview",
 }
-const STORAGE_KEY = "escpos-preview:state:v4"
+const STORAGE_KEY = "escpos-preview:state:v5"
 
 const loadState = (): State => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (raw) {
       const saved = JSON.parse(raw) as Partial<State>
-      const blocks = Array.isArray(saved.blocks) ? saved.blocks.filter((b) => b.kind !== "init") : structuredClone(DEMO_RECEIPT_BLOCKS)
+      const blocks = Array.isArray(saved.blocks) ? saved.blocks.filter((b) => b.kind !== "init") : structuredClone(STARTER_BLOCKS)
       return { ...structuredClone(DEFAULT), ...saved, blocks }
     }
   } catch { /* storage unavailable */ }
